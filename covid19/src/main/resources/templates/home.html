@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Covid 19</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #3366FF;
+  padding: 3px;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+}
+
+body {
+  margin: 3;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 17%;
+  padding: 0 45px;
+}
+.column1 {
+  float: left;
+  width: 12%;
+  padding: 0 10px;
+<!--  margin: 30 -5px;-->
+}
+/* Remove extra left and right margins, due to padding */
+.row {
+margin: 10 -5px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.row1 {
+margin: 20 -5px;
+display: flex;
+align-items: left;
+justify-content: center;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  text-align: center;
+  background-color: #CC3366;
+  color: white;
+}
+h4{
+ text-align: center;
+}
+.datalist {
+<!--  padding: 16px;-->
+<!--  text-align: center;-->
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+form.example button {
+  float: left;
+  width: 55%;
+  padding: 2px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<!--    <img src="https://drive.google.com/drive/my-drive" width="100" height="50">-->
+    <h1>Covid 19 </h1>
+    <h3>Covid19 Statistics</h3>
+    <h10>A website to provide you with all updates on Covid19 statistics</h10>
+</header>
+
+<div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="/allCountries">All Countries</a>
+    <a href="/myRecords">My Records</a>
+</div>
+
+
+<h4>World Total Statistics</h4>
+
+<form>
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <h5 th:text="'Total Confirmed: '+ ${confirmed}" ></h5>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <h5 th:text="'Total Deaths: '+ ${deaths}" ></h5>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <h5 th:text="'Total Recovered: '+ ${recovered}" ></h5>
+        </div>
+    </div>
+
+</div>
+</form><br>
+
+<h4>Get Statistics for a specific Country</h4>
+
+
+<div class="row1">
+    <div class="column1">
+        <div class="card1">
+            <form action="/action_page.php" method="get">
+                <input list="browsers" name="browser" id="browser">
+                <datalist id="browsers">
+                    <option value="">
+                    <option value="">
+                </datalist>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="column1">
+        <div class="card1">
+            <form action="/action_page.php" method="get">
+                <input list="browsers" name="browser" id="browser1">
+                <datalist id="browser2">
+                    <option value="">
+                    <option value="">
+                </datalist>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="column1">
+        <div class="card1">
+            <form action="/action_page.php" method="get">
+                <input list="browsers" name="browser" id="browser3">
+                <datalist id="browsers1">
+                    <option value="">
+                    <option value="">
+                </datalist>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="column1">
+        <div class="card1">
+            <form class="example" action="/search" style="margin:auto;max-width:300px">
+
+                <button type="submit" ><i th:text="SEARCH  "   class="fa fa-search" ></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>All rights reserved 2020</p>
+</div>
+</body>
+</html>
